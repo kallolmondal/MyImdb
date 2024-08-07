@@ -1,0 +1,28 @@
+.banner-container {
+  position: relative;
+  height: 35rem;
+}
+.banner-container > div:nth-child(1) {
+  position: absolute;
+}
+.banner-image {
+  width: 100vw;
+  height: 35rem;
+  position: relative;
+}
+.banner-container > div:nth-child(2) {
+  background-image: linear-gradient(
+    to bottom, rgba(89, 84, 84, 0),
+    rgb(71, 67, 67)
+  );
+  position: absolute;
+  width: 100vw;
+  height: 5rem;
+  bottom: 0;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 3rem;
+  font-family: "Georgia", serif;
+}

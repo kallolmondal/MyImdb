@@ -1,0 +1,26 @@
+.moviePoster-container {
+  height: 35vh;
+  width: 15vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.moviePoster {
+  height: 30vh;
+  width: 12vw;
+  border-radius: 1rem;
+}
+.moviePoster-container > h3 {
+  font-size: 1rem;
+  align-self: center;
+  overflow: hidden;
+  margin-top: 5px;
+}
+.circularProgressbar{
+    position: absolute;
+    height: 5vh;
+    bottom:20px;
+    left: -60px;
+}
