@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import MovieBanner from "../../Components/MovieBanner/movieBanner";
-import MoviePoster from "../../Components/MoviePoster/moviePoster";
-import "./HomeScreen.css";
+import "./homeScreen.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTrendingMovies } from "../../Redux/TrendingMovies/trendingMovieSlice";
 import { fetchNowPlayingMovies } from "../../Redux/NowPlayingMovies/nowPlayingMoviesSlice";
 import ShimmerBanner from "../../Components/ShimmerBanner/shimmerBanner";
 import bannerMiddleware from "../../Redux/Banner/bannerMiddleware";
+import HorizontalList from "../../Components/HorizontalList/horizontalList";
 
 function HomeScreen() {
   const dispatch = useDispatch();
@@ -22,59 +22,26 @@ function HomeScreen() {
     dispatch(fetchNowPlayingMovies());
     dispatch(bannerMiddleware());
   }, [dispatch]);
-
-  const renderTrendingMovie = (movieData, index) => {
-    return loading ? (
-      <ShimmerBanner width={150} height={225} />
-    ) : (
-      <MoviePoster key={movieData.id} movieData={movieData} fitOnFrame />
-    );
-  };
-  const renderNowPlayingMovie = (movieData, index) => {
-    return npLoading ? (
-      <ShimmerBanner width={150} height={225} />
-    ) : (
-      <MoviePoster key={movieData.id} movieData={movieData} />
-    );
-  };
   return (
     <div>
       {bannerLoading ? <ShimmerBanner /> : <MovieBanner banner={banner} />}
 
       <div className="top-rated-movie-container">
         <h1>Top Rated Movies</h1>
-        <div
-          style={{
-            gap: "10px",
-            overflowX: "auto",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          {trendingMovies.map((movieData, index) => {
-            return renderTrendingMovie(movieData, index);
-          })}
-        </div>
+        {loading ? (
+          <ShimmerBanner width={150} height={225} />
+        ) : (
+          <HorizontalList trendingMovies={trendingMovies} />
+        )}
       </div>
 
       <div className="top-rated-movie-container">
         <h1>Now Payling</h1>
-        <div
-          style={{
-            gap: "10px",
-            overflowX: "auto",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          {nowPlayingMovies.map((movieData, index) => {
-            return renderNowPlayingMovie(movieData, index);
-          })}
-        </div>
+        {loading ? (
+          <ShimmerBanner width={150} height={225} />
+        ) : (
+          <HorizontalList trendingMovies={nowPlayingMovies} />
+        )}
       </div>
     </div>
   );

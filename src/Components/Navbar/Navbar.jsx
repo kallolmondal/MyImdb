@@ -1,7 +1,7 @@
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import AddIcon from "@mui/icons-material/Add";
-import "./Navbar.css";
+import "./navbar.css";
 import { Button } from "@mui/material";
 function Navbar() {
   return (
