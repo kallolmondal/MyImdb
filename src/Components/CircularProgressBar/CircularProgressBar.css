@@ -4,9 +4,7 @@
     align-items: center;
     display: inline-block;
     border-radius: 100px;
-    position: absolute;
-    bottom:-2px;
-    left: 30px;
+   
 }
 .circularProgressbar{
     height: 5vh;

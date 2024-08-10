@@ -12,7 +12,9 @@ function MoviePoster({ movieData }) {
           src={BASE_URL + movieData.poster_path}
           alt="movie-poster"
         />
-        <CircularProgressBar ratings={movieData.vote_average} />
+        <div>
+          <CircularProgressBar ratings={movieData.vote_average} />
+        </div>
       </div>
       <div className="movieTitleText-container">
         <h3>{movieData.original_title}</h3>
