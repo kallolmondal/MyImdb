@@ -1,26 +1,40 @@
 .moviePoster-container {
-  height: 35vh;
+  width: 15vw;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.moviePoster-img-progressbar-container {
   width: 15vw;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px 0px 10px 0px;
 }
 .moviePoster {
   height: 30vh;
   width: 12vw;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
-.moviePoster-container > h3 {
+.movieTitleText-container > h3 {
   font-size: 1rem;
-  align-self: center;
+  font-weight: 600;
+  font-family: "Goudy Bookletter 1911", sans-serif;
+  line-height: 1.2rem;
+  clear: both;
   overflow: hidden;
-  margin-top: 5px;
+  white-space: wrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
-.circularProgressbar{
-    position: absolute;
-    height: 5vh;
-    bottom:20px;
-    left: -60px;
+.movieTitleText-container {
+  margin-top: 5px;
+  margin-left: 10px;
+  width: 8rem;
+  height: 3rem;
 }

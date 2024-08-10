@@ -1,0 +1,10 @@
+.top-rated-movie-container{
+    padding: 35px 35px 0px 35px;
+}
+.top-rated-movie-container > h1{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-family: "Georgia", serif;
+}
