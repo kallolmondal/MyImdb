@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { BASE_URL } from "../../Utilities/Utilities";
+import { BASE_URL } from "../../Utilities/utilities";
 
-import "./MovieBanner.css";
+import "./movieBanner.css";
 
 function MovieBanner({banner}) {
   const settings = {

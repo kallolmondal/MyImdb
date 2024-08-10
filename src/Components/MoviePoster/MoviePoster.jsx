@@ -1,10 +1,9 @@
 import React from "react";
-import "./MoviePoster.css";
-import CircularProgressBar from "../CircularProgressBar/CircularProgressBar";
-import { BASE_URL } from "../../Utilities/Utilities";
+import "./moviePoster.css";
+import CircularProgressBar from "../CircularProgressBar/circularProgressBar";
+import { BASE_URL } from "../../Utilities/utilities";
 
 function MoviePoster({ movieData }) {
-  //console.log("movieData==>>>", movieData);
   return (
     <div className="moviePoster-container">
       <div className="moviePoster-img-progressbar-container">
@@ -13,7 +12,9 @@ function MoviePoster({ movieData }) {
           src={BASE_URL + movieData.poster_path}
           alt="movie-poster"
         />
-        <CircularProgressBar ratings={movieData.vote_average} />
+        <div>
+          <CircularProgressBar ratings={movieData.vote_average} />
+        </div>
       </div>
       <div className="movieTitleText-container">
         <h3>{movieData.original_title}</h3>

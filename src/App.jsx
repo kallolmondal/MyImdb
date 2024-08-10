@@ -1,9 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import Navbar from "./Components/Navbar/Navbar";
-import MovieBanner from "./Components/MovieBanner/MovieBanner";
+import Navbar from "./Components/Navbar/navbar";;
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomeScreen from "./Screen/HomeScreen/HomeScreen";
+import HomeScreen from "./Screen/HomeScreen/homeScreen";
 
 function App() {
   return (

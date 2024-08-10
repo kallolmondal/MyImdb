@@ -4,8 +4,11 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease;
 }
-
+.moviePoster-container:hover {
+  transform: scale(1.1);
+}
 .moviePoster-img-progressbar-container {
   width: 15vw;
   position: relative;
@@ -37,4 +40,9 @@
   margin-left: 10px;
   width: 8rem;
   height: 3rem;
+}
+.moviePoster-img-progressbar-container :nth-child(2) {
+  position: absolute;
+  bottom: -10px;
+  left: 25px;
 }
