@@ -8,7 +8,6 @@ import { fetchNowPlayingMovies } from "../../Redux/NowPlayingMovies/nowPlayingMo
 import ShimmerBanner from "../../Components/ShimmerBanner/shimmerBanner";
 import bannerMiddleware from "../../Redux/Banner/bannerMiddleware";
 
-
 function HomeScreen() {
   const dispatch = useDispatch();
   const { trendingMovies, loading, error } = useSelector(
@@ -25,10 +24,18 @@ function HomeScreen() {
   }, [dispatch]);
 
   const renderTrendingMovie = (movieData, index) => {
-    return <MoviePoster key={movieData.id} movieData={movieData} />;
+    return loading ? (
+      <ShimmerBanner width={150} height={225} />
+    ) : (
+      <MoviePoster key={movieData.id} movieData={movieData} fitOnFrame />
+    );
   };
   const renderNowPlayingMovie = (movieData, index) => {
-    return <MoviePoster key={movieData.id} movieData={movieData} />;
+    return npLoading ? (
+      <ShimmerBanner width={150} height={225} />
+    ) : (
+      <MoviePoster key={movieData.id} movieData={movieData} />
+    );
   };
   return (
     <div>

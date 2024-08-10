@@ -48,8 +48,20 @@ const nowPlayingMoviesSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    builder.addCase(fetchNowPlayingMovies.pending, (state, action) => {
+      state.nowPlayingMovies = [];
+      state.npLoading = true;
+      state.npError = false;
+    });
     builder.addCase(fetchNowPlayingMovies.fulfilled, (state, action) => {
       state.nowPlayingMovies = action.payload;
+      state.npLoading = false;
+      state.npError = false;
+    });
+    builder.addCase(fetchNowPlayingMovies.rejected, (state, action) => {
+      state.nowPlayingMovies = [];
+      state.npLoading = true;
+      state.npError = true;
     });
   },
 });

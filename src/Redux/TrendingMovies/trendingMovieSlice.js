@@ -47,9 +47,23 @@ const trendingMovieSlice = createSlice({
   },
   extraReducers: (builder) => {
     // Add reducers for additional action types here, and handle loading state as needed
+    builder.addCase(fetchTrendingMovies.pending, (state, action) => {
+      // Add user to the state array
+      state.trendingMovies = [];
+      state.loading = true;
+      state.error = false;
+    });
     builder.addCase(fetchTrendingMovies.fulfilled, (state, action) => {
       // Add user to the state array
       state.trendingMovies = action.payload;
+      state.loading = false;
+      state.error = false;
+    });
+    builder.addCase(fetchTrendingMovies.rejected, (state, action) => {
+      // Add user to the state array
+      state.trendingMovies = [];
+      state.loading = true;
+      state.error = true;
     });
   },
 });
