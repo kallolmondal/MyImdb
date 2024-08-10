@@ -4,23 +4,23 @@ const bannerSlice = createSlice({
     name:"bannerSlice",
     initialState:{
         banner:[],
-        loading:true,
-        error: false,
+        bannerLoading:true,
+        bannerError: false,
     },
     reducers:{
         setError:(state)=>{
-            state.error=true;
-            state.loading=false;
+            state.bannerError=true;
+            state.bannerLoading=false;
             state.banner=[];
         },
         setLoading:(state)=>{
-           state.loading=true;
-           state.error=false;
+           state.bannerLoading=true;
+           state.bannerError=false;
            state.banner=[];
         },
         setBanner:(state,action)=>{
-            state.loading=false;
-            state.error=false;
+            state.bannerLoading=false;
+            state.bannerError=false;
             state.banner=action.payload;
         }
     }

@@ -2,19 +2,11 @@ import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useDispatch, useSelector } from "react-redux";
-
-import bannerMiddleware from "../../Redux/Banner/bannerMiddleware";
 import { BASE_URL } from "../../Utilities/Utilities";
+
 import "./MovieBanner.css";
 
-function MovieBanner() {
-  const dispatch = useDispatch();
-  const { banner, loading } = useSelector((state) => state.bannerState);
-  console.log("MovieBanner", banner, loading);
-  useEffect(() => {
-    dispatch(bannerMiddleware());
-  }, []);
+function MovieBanner({banner}) {
   const settings = {
     speed: 500,
     slidesToShow: 1,
