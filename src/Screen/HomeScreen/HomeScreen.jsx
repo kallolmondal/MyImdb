@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import MovieBanner from "../../Components/MovieBanner/MovieBanner";
-import MoviePoster from "../../Components/MoviePoster/MoviePoster";
+import MovieBanner from "../../Components/MovieBanner/movieBanner";
+import MoviePoster from "../../Components/MoviePoster/moviePoster";
 import "./HomeScreen.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTrendingMovies } from "../../Redux/TrendingMovies/trendingMovieSlice";
@@ -39,9 +39,7 @@ function HomeScreen() {
   };
   return (
     <div>
-      <div>
-        {bannerLoading ? <ShimmerBanner /> : <MovieBanner banner={banner} />}
-      </div>
+      {bannerLoading ? <ShimmerBanner /> : <MovieBanner banner={banner} />}
 
       <div className="top-rated-movie-container">
         <h1>Top Rated Movies</h1>

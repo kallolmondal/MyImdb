@@ -10,9 +10,9 @@ function Navbar() {
         <div className="left-container">
           <img
             className="logo"
-            src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/171_Imdb_logo_logos-1024.png"
+            src="https://img.icons8.com/?size=100&id=12246&format=png&color=000000"
           />
-          <div className="oval-container"></div>
+          {/* <div className="oval-container"></div> */}
           <div className="text-class">Movies</div>
           <div className="text-class">TVShows</div>
           <div className="text-class">Watchlist</div>

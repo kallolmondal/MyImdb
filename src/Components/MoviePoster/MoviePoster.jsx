@@ -1,7 +1,7 @@
 import React from "react";
 import "./MoviePoster.css";
-import CircularProgressBar from "../CircularProgressBar/CircularProgressBar";
-import { BASE_URL } from "../../Utilities/Utilities";
+import CircularProgressBar from "../CircularProgressBar/circularProgressBar";
+import { BASE_URL } from "../../Utilities/utilities";
 
 function MoviePoster({ movieData }) {
   //console.log("movieData==>>>", movieData);
